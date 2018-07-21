@@ -19,9 +19,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/*database connection*/
 require('dotenv').config({ path: 'variables.env' });
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
+
+/* passport deps */
+const passport = require('passport');
+const session = require('express-session');
+
+/* passport deps */
+const localStrategy = require('passport-local').Strategy;
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
