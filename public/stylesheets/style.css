@@ -5,10 +5,19 @@ a {
 
 .menu a {
   color: #444444!important;
+  font-size: 1.2rem;
+}
+.ui.secondary.pointing.menu {
+  border-bottom: none!important;
 }
 
-.active {
-  border-bottom: 2px solid #444444;
+.ui.secondary.pointing.menu .item {
+  padding-top: 22px!important;
+  padding-bottom: 22px!important;
+}
+
+.active-link {
+  border-bottom: 2px solid #444444!important;
 }
 /* END NAVBAR */
 
