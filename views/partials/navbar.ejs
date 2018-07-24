@@ -1,0 +1,21 @@
+<!-- NAVBAR -->
+  <div class="ui secondary pointing menu">
+
+    <a class="item <%= isActive === 'dashboard' ? 'active-link' : '' %>" href="/dashboard"> Dashboard </a>
+    <a class="item <%= isActive === 'current-expenses' ? 'active-link' : '' %>" href="/current-expenses"> Current expenses </a>
+    <a class="item <%= isActive === 'plan-expenses' ? 'active-link' : '' %>" href="/plan-expenses"> Plan expenses </a>
+    <a class="item <%= isActive === 'current-income' ? 'active-link' : '' %>" href="/current-income"> Current income </a>
+    <a class="item <%= isActive === 'plan-income' ? 'active-link' : '' %>" href="/plan-income"> Plan income </a>
+
+    <div class="right menu">
+
+      <a class="ui item <%= isActive === 'home' ? 'active-link' : '' %>" href="/"> Home </a>
+      <a class="ui item <%= isActive === 'about' ? 'active-link' : '' %>" href="/about"> About Us </a>
+      <a class="ui item <%= isActive === 'contact' ? 'active-link' : '' %>" href="/contact"> Contact Us </a>
+
+      <a class="ui item <%= isActive === 'settings' ? 'active-link' : '' %>" href="/settings"> Settings </a>
+      <a class="ui item <%= isActive === 'register' ? 'active-link' : '' %>" href="/register"> Register </a>
+      <a class="ui item <%= isActive === 'login' ? 'active-link' : '' %>" href="/login"> Login </a>
+      <a class="ui item" href="/logout"> Logout </a>
+    </div>
+  </div>

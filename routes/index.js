@@ -11,19 +11,19 @@ router.get('/', indexController.homePage);
 router.get('/about', indexController.about);
 router.get('/contact', indexController.contact);
 
-router.get('/dashboard', budgetController.else);
-router.get('/current-expenses', budgetController.else);
-router.get('/plan-expenses', budgetController.else);
-router.get('/current-income', budgetController.else);
-router.get('/plan-income', budgetController.else);
+router.get('/dashboard', budgetController.dashboard);
+router.get('/current-expenses', budgetController.currentExpenses);
+router.get('/plan-expenses', budgetController.planExpenses);
+router.get('/current-income', budgetController.currentIncome);
+router.get('/plan-income', budgetController.planIncome);
 
-router.get('/settings', budgetController.else);
+router.get('/settings', userController.settings);
 
-router.get('/register', budgetController.else);
-router.post('/register', budgetController.else);
+router.get('/register', userController.register);
+router.post('/register', userController.register);
 
-router.get('/login', budgetController.else);
-router.post('/login', budgetController.else);
+router.get('/login', userController.login);
+router.post('/login', userController.login);
 
 router.get('/logout', (req, res) => {
   req.logout();

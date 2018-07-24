@@ -10,6 +10,9 @@ a {
 .ui.secondary.pointing.menu {
   border-bottom: none!important;
 }
+.ui.secondary.pointing.menu a.item:active {
+  border: none;
+}
 
 .ui.secondary.pointing.menu .item {
   padding-top: 22px!important;
