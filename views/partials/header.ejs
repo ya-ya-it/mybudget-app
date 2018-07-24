@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title><%= title %> | MyBudget App</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/semantic.min.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= title %> | MyBudget App</title>
+  <!-- CSS -->
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/semantic.css' />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/semantic.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+  <div class="ui secondary pointing menu">
+    <a class="item" href="/dashboard"> Dashboard </a>
+    <a class="item" href="/current-expenses"> Current expenses </a>
+    <a class="item" href="/plan-expenses"> Plan expenses </a>
+    <a class="item" href="/current-income"> Current income </a>
+    <a class="item" href="/plan-income"> Plan income </a>
+    <div class="right menu">
+      <a class="ui item <%= isActive === 'home' ? 'active' : '' %>" href="/"> Home </a>
+      <a class="ui item <%= isActive === 'about' ? 'active' : '' %>" href="/about"> About Us </a>
+      <a class="ui item <%= isActive === 'contact' ? 'active' : '' %>" href="/contact"> Contact Us </a>
+      <a class="ui item" href="/settings"> Settings </a>
+      <a class="ui item" href="/register"> Register </a>
+      <a class="ui item" href="/login"> Login </a>
+      <a class="ui item" href="/logout"> Logout </a>
+    </div>
+  </div>
