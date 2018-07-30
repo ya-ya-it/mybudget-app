@@ -1,4 +1,3 @@
-const Budget = require('../models/Budget');
 const url = require('url');
 
 exports.dashboard = (req, res, next) => {

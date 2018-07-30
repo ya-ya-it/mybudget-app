@@ -1,75 +1,195 @@
+/**
+* Project name: Assignment 1: Express Portfolio Site
+* File name: style.css
+* Author's name: Daria Davydenko
+* Web-site: https://dariadavydenko.herokuapp.com/
+* File description: This is a stylesheet with the custom css.
+* Pictures were taken from www.pexels.com
+* Framework: materializecss.com
+*/
+
+/* NAVBAR */
+.menu a {
+  color: #444444!important;
+}
+
 a {
   color: #4976bd!important;
 }
-/* NAVBAR */
 
-.menu a {
-  color: #444444!important;
-  font-size: 1.2rem;
-}
-.ui.secondary.pointing.menu {
-  border-bottom: none!important;
-}
-.ui.secondary.pointing.menu a.item:active {
-  border: none;
-}
-
-.ui.secondary.pointing.menu .item {
-  padding-top: 22px!important;
-  padding-bottom: 22px!important;
-}
-
-.active-link {
-  border-bottom: 2px solid #444444!important;
+.active {
+  border-bottom: 2px solid #444444;
 }
 /* END NAVBAR */
 
 
+/* MAIN BANNER */
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  margin-bottom:35px;
+}
+
+.banner img {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.banner-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #444444;
+}
+
+.home-text {
+  position: absolute;
+  top: 45%;
+  left: 78%;
+  transform: translate(-50%, -50%);
+  color: #444444;
+}
+
+.home-text p {
+  font-size: 22px;
+}
+
+.home-text a {
+  font-size: 25px;
+}
+/* END MAIN BANNER */
+
+
+/* PROJECTS GRID */
+#project {
+  margin: 20px;
+}
+
+.activator {
+  max-height: 260px;
+}
+/* END PROJECT GRID */
+
+.row-project p {
+  font-size: 24px;
+}
+
 
 /* FOOTER */
 .page-footer{
-  background-color: #444444!important;
-  padding-top: 20px;
+  background-color: #444444;
 }
 .footer {
   padding: 10px;
 }
-.footer .container {
-  width: 70%!important;
-}
-.footer .row {
-  margin-bottom: 30px;
-}
+
 .footer a {
   color: #aaaaaa;
 }
+
 .logo {
   max-height: 30px;
 }
+
 .footer li {
   padding-top: 10px;
-  color: #FFFFFF !important;
-  list-style-type: none;
-}
-
-.white-text {
-  color: #FFFFFF !important;
-  font-weight: 400;
-  line-height: 1.3!important;
-  font-size: 1.8rem;
-  line-height: 110%;
-  margin: 1.0933333333rem 0 0.656rem 0;
-}
-.grey-text {
-  color: #9e9e9e !important;
-}
-.text-lighten-4 {
-  color: #f5f5f5 !important;
-  font-size: 1.1rem;
-}
-
-.left-column-footer {
-  padding-top: 20px;
-  padding-left: 20px;
 }
 /* END FOOTER */
+
+
+/* ABOUT */
+.about-photo {
+  max-height: 500px;
+  margin-top: 50px;
+}
+/* END ANOUT */
+
+
+/* SERVICES */
+.service-container {
+  margin: 60px 40px;
+}
+/* END SERVICES */
+
+
+/* CONTACT FORM */
+.contact-container {
+  margin-top:40px;
+  margin-bottom: 80px;
+}
+/* END CONTACT FORM */
+
+.button-examples{
+  color:#4976bd;
+  font-size: 20px!important;
+  padding: 15px;
+  border: solid #4976bd 1px;
+  border-radius: 5px;
+}
+
+.about-me {
+  font-size: 20px;
+}
+
+.btn, .btn-large, .btn-small, .btn-floating {
+  background-color: #4976bd!important;
+}
+
+.services{
+  font-size: 25px;
+}
+
+.sub-services {
+  font-size: 18px;
+  color: #4976bd;
+}
+
+.about-container {
+  margin-bottom: 35px;
+}
+
+
+@media only screen and (min-width: 1441px) {
+    .activator {
+      max-height: 450px;
+    }
+    .row-project {
+      margin: 0 100px!important;
+    }
+    .about-photo {
+      margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+  h1 {
+    font-size: 3.4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  .home-text {
+    top: 65%;
+  }
+  .banner-text{
+    left: 60%;
+  }
+  .banner-text-projects {
+    left: 50%!important;
+  }
+  .banner-text-services {
+    left: 40%!important;
+  }
+
+  .skills-card {
+    margin-bottom: 20px;
+  }
+  .about-photo {
+    margin-top: 15px;
+  }
+}

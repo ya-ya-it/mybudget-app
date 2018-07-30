@@ -19,11 +19,11 @@ router.get('/plan-income', budgetController.planIncome);
 
 router.get('/settings', userController.settings);
 
-router.get('/register', userController.register);
+router.get('/register', userController.registerForm);
 router.post('/register', userController.register);
 
-router.get('/login', userController.login);
-router.post('/login', userController.login);
+router.get('/login', userController.loginForm);
+router.post('/login', authController.login);
 
 router.get('/logout', (req, res) => {
   req.logout();
