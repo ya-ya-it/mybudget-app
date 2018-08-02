@@ -12,12 +12,10 @@ router.get('/about', indexController.about);
 router.get('/contact', indexController.contact);
 
 router.get('/dashboard', budgetController.dashboard);
-router.get('/current-expenses', budgetController.currentExpenses);
-router.get('/plan-expenses', budgetController.planExpenses);
-router.get('/current-income', budgetController.currentIncome);
-router.get('/plan-income', budgetController.planIncome);
 
-router.get('/settings', userController.settings);
+router.get('/current-expenses', budgetController.currentExpenses);
+router.get('/add-expenses', budgetController.addExpenses);
+router.post('/add-expenses', budgetController.createExpenses);
 
 router.get('/register', userController.registerForm);
 router.post('/register', userController.register);

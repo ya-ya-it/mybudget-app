@@ -3,9 +3,6 @@
 
     <a class="item <%= isActive === 'dashboard' ? 'active-link' : '' %>" href="/dashboard"> Dashboard </a>
     <a class="item <%= isActive === 'current-expenses' ? 'active-link' : '' %>" href="/current-expenses"> Current expenses </a>
-    <a class="item <%= isActive === 'plan-expenses' ? 'active-link' : '' %>" href="/plan-expenses"> Plan expenses </a>
-    <a class="item <%= isActive === 'current-income' ? 'active-link' : '' %>" href="/current-income"> Current income </a>
-    <a class="item <%= isActive === 'plan-income' ? 'active-link' : '' %>" href="/plan-income"> Plan income </a>
 
     <div class="right menu">
 
@@ -13,34 +10,8 @@
       <a class="ui item <%= isActive === 'about' ? 'active-link' : '' %>" href="/about"> About Us </a>
       <a class="ui item <%= isActive === 'contact' ? 'active-link' : '' %>" href="/contact"> Contact Us </a>
 
-      <a class="ui item <%= isActive === 'settings' ? 'active-link' : '' %>" href="/settings"> Settings </a>
       <a class="ui item <%= isActive === 'register' ? 'active-link' : '' %>" href="/register"> Register </a>
       <a class="ui item <%= isActive === 'login' ? 'active-link' : '' %>" href="/login"> Login </a>
       <a class="ui item" href="/logout"> Logout </a>
     </div>
   </div>
-
-  <!-- NAVBAR -->
-    <nav>
-    <div class="nav-wrapper transparent">
-      <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/" class="<%= isActive === 'home' ? 'active' : '' %>">Home</a></li>
-        <li><a href="/about-me" class="<%= isActive === 'about' ? 'active' : '' %>">About Me</a></li>
-        <li><a href="/projects" class="<%= isActive === 'projects' ? 'active' : '' %>">Projects</a></li>
-        <li><a href="/services" class="<%= isActive === 'services' ? 'active' : '' %>">Services</a></li>
-        <li><a href="/contact-me" class="<%= isActive === 'contact' ? 'active' : '' %>">Contact Me</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- END NAVBAR -->
-
-  <!-- MOBILE NAVBAR -->
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about-me" >About Me</a></li>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/services">Services</a></li>
-    <li><a href="/contact-me">Contact Me</a></li>
-  </ul>
-  <!-- END MOBILE NAVBAR -->

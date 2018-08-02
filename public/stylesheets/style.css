@@ -1,24 +1,50 @@
 /**
-* Project name: Assignment 1: Express Portfolio Site
+* Project name: Assignment 2: myBudget App
 * File name: style.css
 * Author's name: Daria Davydenko
-* Web-site: https://dariadavydenko.herokuapp.com/
+* Web-site: https://mybudget-app.herokuapp.com/
 * File description: This is a stylesheet with the custom css.
 * Pictures were taken from www.pexels.com
-* Framework: materializecss.com
+* Framework: https://materializecss.com/
 */
 
+/* GENERAL STYLE RULES */
+.button-examples{
+  color:#4976bd;
+  font-size: 20px!important;
+  padding: 15px;
+  border: solid #4976bd 1px;
+  border-radius: 5px;
+}
+
+.btn, .btn-large, .btn-small, .btn-floating {
+  background-color: #4976bd!important;
+}
+/* END GENERAL STYLE RULES */
+
 /* NAVBAR */
-.menu a {
-  color: #444444!important;
+nav {
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: absolute;
+  z-index: 100;
+}
+
+nav ul a {
+  color: #ffffff!important;
 }
 
 a {
   color: #4976bd!important;
 }
 
+.sidenav-trigger, .sidenav a {
+  color: #ffffff!important;
+}
+
 .active {
-  border-bottom: 2px solid #444444;
+  border-bottom: 2px solid #ffffff;
 }
 /* END NAVBAR */
 
@@ -38,7 +64,6 @@ a {
   margin: 0 auto;
   max-width: 100%;
 }
-
 .banner-text {
   position: absolute;
   top: 25%;
@@ -46,38 +71,8 @@ a {
   transform: translate(-50%, -50%);
   color: #444444;
 }
-
-.home-text {
-  position: absolute;
-  top: 45%;
-  left: 78%;
-  transform: translate(-50%, -50%);
-  color: #444444;
-}
-
-.home-text p {
-  font-size: 22px;
-}
-
-.home-text a {
-  font-size: 25px;
-}
 /* END MAIN BANNER */
 
-
-/* PROJECTS GRID */
-#project {
-  margin: 20px;
-}
-
-.activator {
-  max-height: 260px;
-}
-/* END PROJECT GRID */
-
-.row-project p {
-  font-size: 24px;
-}
 
 
 /* FOOTER */
@@ -101,22 +96,6 @@ a {
 }
 /* END FOOTER */
 
-
-/* ABOUT */
-.about-photo {
-  max-height: 500px;
-  margin-top: 50px;
-}
-/* END ANOUT */
-
-
-/* SERVICES */
-.service-container {
-  margin: 60px 40px;
-}
-/* END SERVICES */
-
-
 /* CONTACT FORM */
 .contact-container {
   margin-top:40px;
@@ -124,46 +103,8 @@ a {
 }
 /* END CONTACT FORM */
 
-.button-examples{
-  color:#4976bd;
-  font-size: 20px!important;
-  padding: 15px;
-  border: solid #4976bd 1px;
-  border-radius: 5px;
-}
-
-.about-me {
-  font-size: 20px;
-}
-
-.btn, .btn-large, .btn-small, .btn-floating {
-  background-color: #4976bd!important;
-}
-
-.services{
-  font-size: 25px;
-}
-
-.sub-services {
-  font-size: 18px;
-  color: #4976bd;
-}
-
-.about-container {
-  margin-bottom: 35px;
-}
-
-
 @media only screen and (min-width: 1441px) {
-    .activator {
-      max-height: 450px;
-    }
-    .row-project {
-      margin: 0 100px!important;
-    }
-    .about-photo {
-      margin-top: 15px;
-    }
+
 }
 
 @media only screen and (max-width: 769px) {
@@ -173,23 +114,7 @@ a {
   h2 {
     font-size: 3rem;
   }
-  .home-text {
-    top: 65%;
-  }
   .banner-text{
     left: 60%;
-  }
-  .banner-text-projects {
-    left: 50%!important;
-  }
-  .banner-text-services {
-    left: 40%!important;
-  }
-
-  .skills-card {
-    margin-bottom: 20px;
-  }
-  .about-photo {
-    margin-top: 15px;
   }
 }

@@ -1,6 +1,40 @@
 <% include partials/header %>
-<% include partials/navbar %>
-  <h1>
-    <%= title %>
-  </h1>
+<% include partials/unauth-navbar %>
+<% include partials/header  %>
+
+<!-- MAIN BANNER -->
+<div class="banner">
+  <img src="/images/contact.jpg" alt="Services">
+  <h1 class="header center banner-text ">Contact Us</h1>
+</div>
+<!-- END MAIN BANNER -->
+
+<!-- CONTACT FORM -->
+<div class="container">
+  <p>If you have any questions about MyBudget App, do not hesitate to contact us</p>
+
+  <div class="contact-container">
+    <form method="POST" action="https://formspree.io/dariadavydenko98@gmail.com">
+      <div class="input-field col s12">
+        <input id="name" type="text" class="validate" name="name" required>
+        <label for="name">Name*</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate" name="email" required>
+        <label for="email">Email*</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="phone" type="tel" class="validate" name="phone">
+        <label for="email">Phone</label>
+      </div>
+      <div class="input-field col s12">
+        <textarea id="questions" class="materialize-textarea" name="questions"></textarea>
+        <label for="questions">How can I help you?</label>
+      </div>
+      <button type="submit" class="waves-effect waves-light btn">Submit</button>
+    </form>
+  </div>
+</div>
+<!-- END CONTACT FORM -->
+
 <% include partials/footer %>

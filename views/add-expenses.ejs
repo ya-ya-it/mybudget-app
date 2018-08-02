@@ -1,0 +1,42 @@
+<% include partials/header %>
+<% include partials/navbar %>
+  <h1>
+    <%= title %>
+  </h1>
+
+  <div class="row flex-center">
+        <div class="sm-4 col">
+
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <form method="POST" action="/add-expenses">
+                      <div class="form-group">
+                          <label for="title">Year</label>
+                          <input type="text" id="year" name="year" class="input-block">
+                      </div>
+                        <div class="form-group">
+                            <label for="title">Month</label>
+                            <input type="text" id="month" name="month" class="input-block">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="publisher">Rent</label>
+                            <input type="text" id="rent" name="rent" class="input-block">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="imageUrl">Food</label>
+                            <input type="text" id="food" name="food" class="input-block">
+                        </div>
+                        <div class="form-group">
+                            <label for="imageUrl">Buspass</label>
+                            <input type="text" id="buspass" name="buspass" class="input-block">
+                        </div>
+
+                        <button type="submit" class="btn-secondary btn-block">Add Expense</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<% include partials/footer %>
