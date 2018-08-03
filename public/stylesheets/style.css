@@ -43,7 +43,7 @@ a {
   color: #ffffff!important;
 }
 
-.active {
+nav .active {
   border-bottom: 2px solid #444444;
 }
 /* END NAVBAR */
@@ -78,6 +78,16 @@ a {
   padding: 10px 20px;
 }
 /* END MAIN BANNER */
+
+/* DASHBOARD */
+.tabs .indicator {
+  background-color: #4976bd;
+}
+
+.tabs .active {
+  background-color: #ffffff!important;
+}
+/* END DASHBOARD */
 
 /* FOOTER */
 .page-footer{

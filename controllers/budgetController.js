@@ -2,9 +2,18 @@ const Expenses = require('../models/Expenses');
 const url = require('url');
 
 exports.dashboard = (req, res, next) => {
-  res.render('dashboard', {
-    title: 'Dashboard',
-    isActive: 'dashboard',
+  Expenses.find((err, expenses) => {
+    if (err) {
+      res.render('error', {
+        title: 'Error!'
+      });
+    } else {
+      res.render('dashboard', {
+        title: 'Dashboard',
+        expenses,
+        isActive: 'dashboard',
+      });
+    }
   });
 };
 

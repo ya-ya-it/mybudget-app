@@ -1,38 +1,54 @@
 <% include partials/header %>
-<% include partials/navbar %>
-  <h1>
+  <% include partials/navbar %>
+    <h1>
     <%= title %>
   </h1>
-  <a href="/add-expenses">Add expense</a>
-  <table>
-        <thead>
-          <tr>
-              <th>Category</th>
-              <% for (let i = 0; i < expenses.length; i++) { %>
-              <th><%= expenses[i].month %></th>
-              <% } %>
-          </tr>
-        </thead>
+    <a href="/add-expenses">Add expense</a>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <% for (let i = 0; i < expenses.length; i++) { %>
+            <th>
+              <a href="/update-expenses">Update</a> / <a href="/delete-expenses">Delete</a>
+            </th>
+            <% } %>
+        </tr>
+        <tr>
+          <th>Category</th>
+          <% for (let i = 0; i < expenses.length; i++) { %>
+            <th>
+              <%= expenses[i].month %>
+            </th>
+            <% } %>
+        </tr>
+      </thead>
 
-        <tbody>
-          <tr>
-            <td>Rent</td>
-            <% for (let i = 0; i < expenses.length; i++) { %>
-            <td><%= expenses[i].rent %></td>
+      <tbody>
+        <tr>
+          <td>Rent</td>
+          <% for (let i = 0; i < expenses.length; i++) { %>
+            <td>
+              <%= expenses[i].rent %>
+            </td>
             <% } %>
-          </tr>
-          <tr>
-            <td>Food</td>
-            <% for (let i = 0; i < expenses.length; i++) { %>
-            <td><%= expenses[i].food %></td>
+        </tr>
+        <tr>
+          <td>Food</td>
+          <% for (let i = 0; i < expenses.length; i++) { %>
+            <td>
+              <%= expenses[i].food %>
+            </td>
             <% } %>
-          </tr>
-          <tr>
-            <td>Buspass</td>
-            <% for (let i = 0; i < expenses.length; i++) { %>
-            <td><%= expenses[i].buspass %></td>
+        </tr>
+        <tr>
+          <td>Buspass</td>
+          <% for (let i = 0; i < expenses.length; i++) { %>
+            <td>
+              <%= expenses[i].buspass %>
+            </td>
             <% } %>
-          </tr>
-        </tbody>
-      </table>
-<% include partials/footer %>
+        </tr>
+      </tbody>
+    </table>
+    <% include partials/footer %>
