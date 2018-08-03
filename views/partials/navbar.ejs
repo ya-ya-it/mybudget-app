@@ -1,5 +1,12 @@
 <!-- NAVBAR -->
+
+  <% if(isActive === 'home' || isActive === 'dashboard' || isActive === 'contact'){ %>
+    <nav class="absolute">
+  <% } else {%>
   <nav>
+  <% } %>
+
+
   <div class="nav-wrapper transparent">
     <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">

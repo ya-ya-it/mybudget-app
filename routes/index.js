@@ -19,6 +19,9 @@ router.post('/add-expenses', budgetController.createExpenses);
 router.get('/register', userController.registerForm);
 router.post('/register', userController.register);
 
+router.get('/google', authController.googlePre);
+router.get('/google/callback', authController.googlePost);
+
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
 

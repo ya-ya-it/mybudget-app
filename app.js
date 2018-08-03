@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*database connection*/
+const bodyParser = require('body-parser');
 require('dotenv').config({ path: 'variables.env' });
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
@@ -27,6 +28,42 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 /* passport deps */
 const passport = require('passport');
 const session = require('express-session');
+
+// takes raw requests and turns them into usable properties on req.body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: 'Secret!',
+    resave: true,
+    saveUninitialized: false
+  }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+const User = require('./models/User');
+
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+passport.use(User.createStrategy());
+
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
+
+passport.use(new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
+      passReqToCallback: true
+    },
+    (request, accessToken, refreshToken, profile, done) => {
+      User.findOrCreate({ username: profile.emails[0].value }, (err, user) =>
+        done(err, user));
+    }
+  ));
 
 /* passport deps */
 const localStrategy = require('passport-local').Strategy;
