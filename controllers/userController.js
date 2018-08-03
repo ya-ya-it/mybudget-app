@@ -33,7 +33,7 @@ exports.register = (req, res, next) => {
       return res.render('register', {
         title: 'Register',
         isActive: 'register',
-        warning: 'Sorry, that username is already taken.  Try again.',
+        warning: 'Sorry, that username is already taken. Try again.',
         user: req.user,
       });
     }
@@ -42,15 +42,9 @@ exports.register = (req, res, next) => {
 };
 
 exports.loginForm = (req, res) => {
-  const messages = req.session.messages || [];
-
-  // clear session message
-  req.session.messages = [];
 
   res.render('login', {
     title: 'Login',
-    isActive: 'login',
-    messages,
-    user: req.user,
+    isActive: 'login'
   });
 };

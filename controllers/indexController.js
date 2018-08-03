@@ -15,13 +15,6 @@ exports.homePage = (req, res, next) => {
   });
 };
 
-exports.about = (req, res, next) => {
-  res.render('about', {
-    title: 'About Us',
-    isActive: 'about',
-  });
-};
-
 exports.contact = (req, res, next) => {
   res.render('contact', {
     title: 'Contact Us',
