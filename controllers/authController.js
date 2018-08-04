@@ -1,3 +1,13 @@
+/**
+* Project name: Assignment 2: Express Portfolio Site
+* File name: authController.js
+* Author's name: Daria Davydenko
+* Web-site: https://mybudget-app.herokuapp.com/
+* File description: This is a controller file with the functions to authorize user information.
+* Pictures were taken from www.pexels.com
+* Framework: https://materializecss.com/
+*/
+
 const passport = require('passport');
 const mongoose = require('mongoose');
 

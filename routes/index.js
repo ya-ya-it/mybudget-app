@@ -28,6 +28,8 @@ router.post('/register', userController.register);
 router.get('/google', authController.googlePre);
 router.get('/google/callback', authController.googlePost);
 
+router.get('/current-expenses/api', authController.isLoggedIn, budgetController.renderJSON);
+
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
 

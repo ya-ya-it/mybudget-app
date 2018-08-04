@@ -65,9 +65,6 @@ passport.use(new GoogleStrategy(
     }
   ));
 
-/* passport deps */
-const localStrategy = require('passport-local').Strategy;
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

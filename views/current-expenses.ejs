@@ -1,3 +1,13 @@
+<!--
+Project name: Assignment 2: myBudget App
+File name: current-expenses.ejs
+Author's name: Daria Davydenko
+Web-site: https://mybudget-app.herokuapp.com/
+File description: This is a page with a table to see and edit all expenses.
+Pictures were taken from www.pexels.com
+Framework: https://materializecss.com/
+-->
+
 <% include partials/header %>
   <% include partials/navbar %>
   <!-- MAIN BANNER -->
@@ -13,6 +23,7 @@
   <!-- TABLE -->
   <div class="container">
     <a href="/add-expenses" class="right btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i></a>
+    <a href="/current-expenses/api" class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>Get API</a>
     <table class="table-expenses">
       <thead>
         <tr>
