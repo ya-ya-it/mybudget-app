@@ -36,13 +36,13 @@ exports.googlePre = passport.authenticate('google', {
 });
 
 exports.googlePost = passport.authenticate('google', {
-  successRedirect: '/',
+  successRedirect: '/current-expenses',
   failureRedirect: '/login',
 });
 
 exports.githubPre = passport.authenticate('github');
 
 exports.githubPost = passport.authenticate('github', {
-  successRedirect: '/',
+  successRedirect: '/current-expenses',
   failureRedirect: '/login',
 });
