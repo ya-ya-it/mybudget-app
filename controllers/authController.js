@@ -39,3 +39,10 @@ exports.googlePost = passport.authenticate('google', {
   successRedirect: '/',
   failureRedirect: '/login',
 });
+
+exports.githubPre = passport.authenticate('github');
+
+exports.githubPost = passport.authenticate('github', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+});

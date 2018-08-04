@@ -3,6 +3,7 @@ const indexController = require('../controllers/indexController');
 const budgetController = require('../controllers/budgetController');
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
+const passport = require('passport');
 
 const router = express.Router();
 
@@ -27,6 +28,9 @@ router.post('/register', userController.register);
 
 router.get('/google', authController.googlePre);
 router.get('/google/callback', authController.googlePost);
+
+router.get('/github', authController.githubPre);
+router.get('/github/callback', authController.githubPost);
 
 router.get('/current-expenses/api', authController.isLoggedIn, budgetController.renderJSON);
 
