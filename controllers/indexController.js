@@ -12,6 +12,7 @@ exports.homePage = (req, res, next) => {
   res.render('index', {
     title: 'Home',
     isActive: 'home',
+    user: req.user,
   });
 };
 
@@ -19,5 +20,6 @@ exports.contact = (req, res, next) => {
   res.render('contact', {
     title: 'Contact Us',
     isActive: 'contact',
+    user: req.user,
   });
 };

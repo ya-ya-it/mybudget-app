@@ -21,7 +21,7 @@ exports.register = (req, res, next) => {
         title: 'Register',
         isActive: 'register',
         warning: 'Sorry, that username is already taken. Try again.',
-        // user: req.user,
+        user: req.user,
       });
     }
     // next();
@@ -39,6 +39,7 @@ console.log(messages);
   res.render('login', {
     title: 'Login',
     isActive: 'login',
-    messages
+    messages,
+    user: req.user,
   });
 };

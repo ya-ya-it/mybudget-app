@@ -5,13 +5,15 @@ exports.dashboard = (req, res, next) => {
   Expenses.find((err, expenses) => {
     if (err) {
       res.render('error', {
-        title: 'Error!'
+        title: 'Error!',
+        user: req.user,
       });
     } else {
       res.render('dashboard', {
         title: 'Dashboard',
         expenses,
         isActive: 'dashboard',
+        user: req.user,
       });
     }
   });
@@ -21,13 +23,15 @@ exports.currentExpenses = (req, res, next) => {
   Expenses.find((err, expenses) => {
     if (err) {
       res.render('error', {
-        title: 'Error!'
+        title: 'Error!',
+        user: req.user,
       });
     } else {
       res.render('current-expenses', {
         title: 'Expenses',
         expenses,
         isActive: 'current-expenses',
+        user: req.user,
       });
     }
   });
@@ -36,7 +40,8 @@ exports.currentExpenses = (req, res, next) => {
 exports.addExpenses = (req, res) => {
   res.render('add-expenses', {
     title: 'Add Expenses',
-    isActive: 'current-expenses',
+    isActive: 'null',
+    user: req.user,
   });
 };
 
@@ -50,9 +55,42 @@ exports.createExpenses = async (req, res) => {
   }
 };
 
-exports.planExpenses = (req, res, next) => {
-  res.render('plan-expenses', {
-    title: 'Plan expenses',
-    isActive: 'plan-expenses',
+exports.deleteExpenses = (req, res) => {
+  Expenses.findByIdAndRemove(
+    { _id: req.params.id },
+    async (err, gameJustDeleted) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect('/current-expenses');
+      }
+    },
+  );
+};
+
+exports.editExpenses = (req, res) => {
+  // use Game model to find selected document
+  Expenses.findById({ _id: req.params.id }, (err, expenses) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('update-expenses', {
+        title: 'Edit',
+        expenses,
+        isActive: 'null',
+        user: req.user,
+      });
+    }
+  });
+};
+
+exports.updateExpenses = (req, res) => {
+
+  Expenses.update({ _id: req.params.id }, req.body, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/current-expenses');
+    }
   });
 };

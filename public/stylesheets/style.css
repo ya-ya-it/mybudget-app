@@ -19,6 +19,7 @@
 
 .btn, .btn-large, .btn-small, .btn-floating {
   background-color: #4976bd!important;
+  color: #ffffff!important;
 }
 /* END GENERAL STYLE RULES */
 
@@ -51,6 +52,11 @@ a {
 
 nav .active {
   border-bottom: 2px solid #444444;
+}
+
+.brand-logo {
+  color: #ffffff!important;
+  margin-left: 10px;
 }
 /* END NAVBAR */
 
@@ -134,6 +140,10 @@ nav .active {
   margin-bottom: 80px;
 }
 /* END CONTACT FORM */
+
+.table-expenses {
+  margin: 40px;
+}
 
 @media only screen and (min-width: 1441px) {
 

@@ -18,4 +18,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $(document).ready(function(){
       $('.tabs').tabs();
-    });
+      $('select').formSelect();
+  });

@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 
-  <% if(isActive === 'home' || isActive === 'dashboard' || isActive === 'contact'){ %>
+  <% if(isActive === 'home' || isActive === 'dashboard' || isActive === 'contact' || isActive === 'current-expenses' ){ %>
     <nav class="absolute">
   <% } else {%>
   <nav>
@@ -8,13 +8,25 @@
 
 
   <div class="nav-wrapper transparent">
+    <% if (user) { %>
+      <a href="#" class="brand-logo">Hello, <%= user.username %></a>
+    <% } %>
     <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/" class="<%= isActive === 'home' ? 'active' : '' %>">Home</a></li>
+      <% if (user) { %>
+        <li><a href="/current-expenses" class="<%= isActive === 'current-expenses' ? 'active' : '' %>">Expenses</a></li>
+      <% } %>
       <li><a href="/dashboard" class="<%= isActive === 'dashboard' ? 'active' : '' %>">Dashboard</a></li>
       <li><a href="/contact" class="<%= isActive === 'contact' ? 'active' : '' %>">Contact Us</a></li>
-      <li><a href="/login" class="<%= isActive === 'login' ? 'active' : '' %>">Login</a></li>
-      <li><a href="/register" class="<%= isActive === 'register' ? 'active' : '' %>">Register</a></li>
+      <% if (!user) { %>
+        <li><a href="/login" class="<%= isActive === 'login' ? 'active' : '' %>">Login</a></li>
+        <li><a href="/register" class="<%= isActive === 'register' ? 'active' : '' %>">Register</a></li>
+      <% } %>
+      <% if (user) { %>
+        <li><a href="/logout">Logout</a></li>
+      <% } %>
+
     </ul>
   </div>
 </nav>
@@ -23,9 +35,17 @@
 <!-- MOBILE NAVBAR -->
 <ul class="sidenav" id="mobile-demo">
   <li><a href="/">Home</a></li>
+  <% if (user) { %>
+    <li><a href="/current-expenses">Expenses</a></li>
+  <% } %>
   <li><a href="/dashboard" >Dashboard</a></li>
   <li><a href="/contact">Contact Us</a></li>
-  <li><a href="/register">Register</a></li>
-  <li><a href="/login">Login</a></li>
+  <% if (!user) { %>
+    <li><a href="/register">Register</a></li>
+    <li><a href="/login">Login</a></li>
+  <% } %>
+  <% if (user) { %>
+    <li><a href="/logout">Logout</a></li>
+  <% } %>
 </ul>
 <!-- END MOBILE NAVBAR -->
